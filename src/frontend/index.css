@@ -2,3 +2,16 @@
 * {
   font-family: 'Montserrat', sans-serif;
 }
+body {
+  background-color:#000;
+  color:#fff;
+}
+header {
+  height: 200px;
+}
+table, th, td {
+  text-align: center;
+  padding: 0px 30px;
+  border: 1px solid #ffffff;
+}
+tr:hover {background-color :rgb(59, 58, 92);}

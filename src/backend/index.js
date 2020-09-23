@@ -2,11 +2,15 @@ const express = require("express");
 const app = express();
 const router = express.Router();
 const path = require("path");
-
+const bodyParser = require("body-parser");
 const mealsRouter = require("./api/meals");
 const reservationsRouter = require("./api/reservations");
 const port = process.env.PORT || 3000;
-
+/* app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+); */
 // For week4 no need to look into this!
 // Serve the built client html
 const buildPath = path.join(__dirname, "./../frontend");

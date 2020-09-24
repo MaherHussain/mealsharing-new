@@ -3,7 +3,7 @@ window.handleHomeRequest = () => {
   <div class="container"> 
   <header class="mt-5">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">Let's eat</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -38,7 +38,8 @@ window.handleHomeRequest = () => {
   </div>
 </nav>
   <h4>Welcome to meal-sharing applicaion -</h4>
-  <p>this is my first app using node js - </p>
+  <p>this is my first app using node js
+   - </p>
 </header>
 
 

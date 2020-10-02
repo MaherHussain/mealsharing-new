@@ -39,6 +39,20 @@ router.get("/", async (request, response) => {
           .limit(parseInt(request.query.limit))
           .then((data) => response.json(data))
           .catch((err) => response.status(400).send("Bad request").end());
+      } else if (request.query.availableReservations) {
+        if (request.query.availableReservations ==="true"){
+
+          return await knex("meals")
+            .select("meals.*")
+            .count("reservations.id as availablereservations")
+            .leftJoin("reservations", "meals.id", "=", "reservations.meal_id")
+            .groupBy("meals.id")
+            .having(
+              knex.raw("meals.max_reservations > count(reservations.meal_id)")
+            )
+            .then((data) => response.json(data))
+            .catch((err) => response.status(400).send("Bad request").end());
+        }
       }
   
     } catch (error) {
@@ -48,6 +62,8 @@ router.get("/", async (request, response) => {
   
   
 });
+
+
 
 // adding a new meals 
 router.post("/", async (request, response) => {

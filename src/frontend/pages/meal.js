@@ -1,30 +1,44 @@
 window.handleMealRequest = params => {
   document.body.innerHTML = `
+  <div class="container">
   <h1>Meal with id ${params.id}</h1>
   <ul class="meal"></ul>
 
 
    <div id="reser">
-    <h2>create reservation to chossen meal</h2><br><br>
+    <h2>create reservation </h2><br><br>
   <form action="" method="post" >
-  <label for="name">name </label><br>
-  <input type="text" id="name" name="contact_name" required><br><br>
+  <div class="form-group row">
+    <label for="name" class="col-sm-2 col-form-label">name :</label>
+    <div class="col-sm-10">
+      <input type="text" id="name" class="form-control" name="contact_name" required>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="contact_email" class="col-sm-2 col-form-label"> email:</label>
+    <div class="col-sm-10">
+      <input type="text" id="contact_email" class="form-control" name="contact_email" required> 
+    </div>
+  </div>
 
-  <label for="contact_email"> email:</label><br>
-  <input type="text" id="contact_email" name="contact_email" required> <br><br>
-
-  <label for="contact_phonenumber" >phone number :</label><br>
-  <input type="text" id="contact_phonenumber" name="contact_phonenumber" required><br><br>
+   <div class="form-group row">
+    <label for="contact_phonenumber" class="col-sm-2 col-form-label">phone number :</label>
+    <div class="col-sm-10">
+      <input type="text" id="contact_phonenumber" class="form-control"  name="contact_phonenumber" required>
+    </div>
+  </div>
 
   <input type="text" id="created_date" hidden name="created_date"><br><br>
 
   
-  <input type="number" hidden id="number_of_guests" name="number_of_guests" value="10"><br>
+  <input type="number" hidden id="number_of_guests" name="number_of_guests" value="10">
  
   
  
 </form>
   </div>
+  </div>
+  
   `;
 const form = document.querySelector("form");
 
@@ -38,10 +52,18 @@ const form = document.querySelector("form");
          li.innerHTML = `meal title : ${data[0].title}<br> description : ${data[0].description}`;
          ul.appendChild(li);
 
-    form.innerHTML += `<label for="location" >meal id :</label><br>
-    <input type="number" disabled id="meal_id" name="meal_id" value="${params.id}"><br><br>
-    
-    <input type="submit" id="btn" value="send"></input>`;
+    form.innerHTML += `
+    <div class="form-group row">
+        <label for="meal_id" class="col-sm-2 col-form-label">meal id :</label>
+        <div class="col-sm-10">
+          <input type="number"  class="form-control" disabled id="meal_id" name="meal_id" value="${params.id}">
+        </div>
+    </div>
+    <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-dark">reserve</button>
+    </div>
+  </div>`;
     const date = new Date();
     const currentDate = date.toISOString().slice(0, 10);
 
@@ -89,34 +111,12 @@ postData("/api/reservations", {
   meal_id: parseInt(document.getElementById("meal_id").value),
   number_of_guests: parseInt(document.getElementById("number_of_guests").value),
 }).then((data) => {
+  alert("the reservation done ");
   console.log(data); // JSON data parsed by `data.json()` call
-});
-/* const data = {
-  contact_name: document.getElementById("name").value,
-  contact_phonenumber: document.getElementById("contact_phonenumber").value,
-  contact_email: document.getElementById("contact_email").value,
-  created_date: document.getElementById("created_date").value,
-  meal_id: parseInt(document.getElementById("meal_id").value),
-  number_of_guests: parseInt(document.getElementById("number_of_guests").value),
-};
-              console.log(data)
+}).catch(error => {
+  console.log(error)
+})
 
-
-  fetch("/api/reservations", {
-    method: "POST", // or 'PUT'
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("Success:", data);
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
- */
 });
 
 

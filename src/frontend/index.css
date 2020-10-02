@@ -5,17 +5,65 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  background-color:#000 !important;
-  color:#fff !important;
-}
+
 header {
-  height: 200px;
-background: url(~/images/chef.jpg) no-repeat center;
+  
+background: url(./images/food-91534.jpg) no-repeat center center;
+background-size: 100%;
+
+object-fit:contain;
 }
+.topheader{
+
+padding: 10% 0;
+text-align: center;
+color:#030303;
+}
+.topheader h4,.topheader p{
+   display:inline-block;
+  width: auto;
+ background-color: #ffffffa4;
+ font-size: 30px;
+  
+}
+.home-div{
+  text-align: center !important;
+  margin-top: 20px;
+}
+.Link{
+  color: #030303;
+  background-color:#c0c0c0;
+  padding:10px 30px;
+  font-size: 30px;
+}
+#search{
+    border-radius:5px;
+    padding-left:30px;
+    padding-top:5px;
+    padding-bottom:5px;
+  
+    border:1px solid #030303;
+    width:100px;
+    transition:width .4s ease-in-out;
+    background:url(./images/search.png) no-repeat;
+    background-color:#ffffff;
+    background-position:5px 5px;
+
+}
+#search:focus{
+    width:100%;
+    
+}
+footer #copyright{
+  background-color: #030303 !important;
+  color: #ffffff !important;
+  padding: 30px 0;
+}
+
+
 table, th, td {
   text-align: center;
   padding: 0px 30px;
-  border: 1px solid #ffffff;
+  border: 1px solid #0e0e0e;
 }
-tr:hover {background-color :rgb(59, 58, 92);}
+tr:hover {background-color :rgb(133, 99, 99);}

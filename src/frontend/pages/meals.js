@@ -38,7 +38,7 @@ window.handleMealsRequest = () => {
                     <th> meal title</th>
                     <th>description</th>
                     <th>price</th>
-                    <th>available</th>
+                   
                 </tr>
 
             </tbody>

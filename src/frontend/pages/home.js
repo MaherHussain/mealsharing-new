@@ -23,7 +23,7 @@ window.handleHomeRequest = () => {
   </div>
 </div>
 <div class="topheader">
-<h4>Welcome to meal-sharing applicaion -</h4> <br>
+<h4>Welcome to meal-sharing application -</h4> <br>
   <p>let's eat- </p>
    </div>
   

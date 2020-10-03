@@ -21,7 +21,7 @@ window.handleMealsRequest = () => {
   </div>
 </div>
 <div class="topheader">
-<h4 class="text-center">Meals</h4> <br>
+<h4 class="text-center text-dark">Meals</h4> <br>
   <p>we love meals
    - </p>
    </div>
@@ -46,7 +46,7 @@ window.handleMealsRequest = () => {
 
     </div>
     <br><br>
- <a href="addMeal" class="Link">add new meal</a>
+  <p><a href="addMeal" class="btn btn-primary p-3 px-xl-4 py-xl-3">Add new meal</a> </p>
    </div>
 </div>
 
@@ -73,14 +73,7 @@ window.handleMealsRequest = () => {
     });
   }
 
-  // burger menu function
-  function myFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-      x.className += " w3-show";
-    } else {
-      x.className = x.className.replace(" w3-show", "");
-    }
-  }
+  
+  
 };
  

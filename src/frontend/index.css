@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-header {
+.topheader {
   
 background: url(./images/food-91534.jpg) no-repeat center center;
 background-size: 100%;
